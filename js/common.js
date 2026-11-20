@@ -10,12 +10,13 @@ window.MODY = {
   // 토큰이 주소창·방문 기록에 남지 않도록 읽자마자 주소에서 지운다.
   takeAuthResult() {
     const hash = new URLSearchParams(location.hash.replace(/^#/, ''));
-    const get = (k) => hash.get(k) || this.params.get(k);
+    const query = window.MODY.params; // 구조 분해로 꺼내 쓰므로 this 대신 전역을 쓴다
+    const get = (k) => hash.get(k) || query.get(k);
     const result = {
       accessToken: hash.get('access_token'),
       refreshToken: hash.get('refresh_token'),
       type: get('type'),
-      tokenHash: this.params.get('token_hash'),
+      tokenHash: query.get('token_hash'),
       error: get('error_code') || get('error'),
       errorDescription: get('error_description'),
     };
