@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://dptwtwlobntujgbakybl.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>모디 비밀번호 재설정</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<h1>새 비밀번호 설정</h1>
+<form id="form" novalidate>
+  <label for="password">새 비밀번호 (8자 이상)</label>
+  <input id="password" name="password" type="password" autocomplete="new-password" required>
+  <label for="password2">새 비밀번호 확인</label>
+  <input id="password2" name="password2" type="password" autocomplete="new-password" required>
+  <button id="go" type="submit">변경하기</button>
+</form>
+<p id="status" role="status" aria-live="polite"></p>
+<script src="../vendor/supabase.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/reset.js"></script>
+</main>
+</body>
+</html>

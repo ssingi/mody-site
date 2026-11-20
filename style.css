@@ -1,0 +1,21 @@
+/* 앱 디자인(DESIGN.md '순번 대기표')과 같은 색: 대합실 회색 바탕, 숯색 주 버튼, 오류만 LED 빨강 */
+:root { color-scheme: light dark; --fg: #1B1D21; --bg: #EFF1F4; --paper: #FFFFFF; --muted: #5B616B; --line: #C4C9D0; --btn: #24262B; --btn-fg: #FFFFFF; --err: #C9221D; }
+@media (prefers-color-scheme: dark) { :root { --fg: #ECEDEF; --bg: #121316; --paper: #1D1F23; --muted: #A3A8B1; --line: #41454D; --btn: #ECEDEF; --btn-fg: #121316; --err: #FF6B65; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 "Pretendard", system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; }
+main { max-width: 480px; margin: 0 auto; padding: 48px 16px; }
+h1 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 0 0 12px; }
+h2 { font-size: 1.1rem; margin: 28px 0 8px; }
+p, li { color: var(--fg); }
+.muted { color: var(--muted); font-size: 0.9rem; }
+label { display: block; margin: 14px 0 6px; font-weight: 600; font-size: 0.95rem; }
+input { width: 100%; padding: 12px 14px; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--fg); }
+input:focus { outline: none; border: 2px solid var(--fg); padding: 11px 13px; }
+button { margin-top: 18px; width: 100%; min-height: 46px; padding: 10px 20px; font: inherit; font-weight: 700; border: 0; border-radius: 10px; background: var(--btn); color: var(--btn-fg); cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+button:disabled { opacity: 0.5; cursor: default; }
+[hidden] { display: none !important; }
+#status { margin-top: 16px; min-height: 1.6em; font-weight: 600; }
+#status.err { color: var(--err); }
+a { color: var(--fg); text-underline-offset: 3px; }
+::selection { background: rgba(27, 29, 33, 0.18); }
