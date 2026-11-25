@@ -20,7 +20,7 @@ window.MODY = {
       error: get('error_code') || get('error'),
       errorDescription: get('error_description'),
     };
-    if (location.hash || result.error) history.replaceState(null, '', location.pathname);
+    if (location.hash || location.search) history.replaceState(null, '', location.pathname);
     return result;
   },
   status(text, isError) {
